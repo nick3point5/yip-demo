@@ -1,0 +1,29 @@
+{
+	"nodeModulesDir": "auto",
+  "imports": {
+    "@libsql/client": "npm:@libsql/client@^0.14.0",
+    "@std/dotenv": "jsr:@std/dotenv@^0.225.2",
+    "@ts-rex/bcrypt": "jsr:@ts-rex/bcrypt@^1.0.3",
+    "dotenv": "npm:dotenv@^16.4.5",
+    "drizzle-kit": "npm:drizzle-kit@^0.28.1",
+    "drizzle-orm": "npm:drizzle-orm@^0.36.4",
+    "hono": "jsr:@hono/hono@^4.6.12"
+  },
+  "tasks": {
+    "start": "deno run -A main.ts",
+		"dev": "deno run -A --watch main.ts",
+		"migrate": "deno -A db/migrate.ts",
+		"generate": "deno -A npm:drizzle-kit generate",
+		"db:push": "deno -A npm:drizzle-kit push"
+  },
+  "compilerOptions": {
+    "jsx": "precompile",
+    "jsxImportSource": "hono/jsx"
+  },
+	"fmt": {
+		"semiColons": false,
+		"indentWidth": 2,
+		"useTabs": true,
+		"lineWidth": 140
+	}
+}

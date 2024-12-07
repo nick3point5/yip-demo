@@ -1,0 +1,48 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1733076272147,
+      "tag": "0000_furry_white_tiger",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1733090306101,
+      "tag": "0001_amusing_la_nuit",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1733434892189,
+      "tag": "0002_chemical_the_watchers",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1733602740459,
+      "tag": "0003_freezing_clea",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1733608978004,
+      "tag": "0004_worthless_gabe_jones",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1733613053723,
+      "tag": "0005_conscious_vision",
+      "breakpoints": true
+    }
+  ]
+}
