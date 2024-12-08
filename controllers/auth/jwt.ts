@@ -1,5 +1,5 @@
 import { sign, verify, jwt } from "hono/jwt"
-import { UserModel } from "../../models/users.ts"
+import { UserModel } from "../../models/Users.ts"
 import { JWTPayload } from "hono/utils/jwt/types"
 
 export function createJWT(user: UserModel) {
