@@ -23,7 +23,6 @@ interface ReplyBody extends PostBody {
 	replyId: number
 }
 
-postRouter.use("/*", handleAuth())
 postRouter.get("/q", async (c) => {
 	const distance = Number(c.req.query("distance"))
 	const lat = Number(c.req.query("lat"))
@@ -52,7 +51,14 @@ postRouter.get("/q", async (c) => {
 
 	try {
 		const posts = await db
-			.select()
+			.select({
+				id: Posts.id,
+				message: Posts.message,
+				username: Posts.username,
+				lat: Posts.lat,
+				lon: Posts.lon,
+				createdAt: Posts.createdAt,
+			})
 			.from(Posts)
 			.where(
 				sql`${sin_lat} * ${Posts.sin_lat} + ${cos_lat} * ${Posts.cos_lat} * (${Posts.cos_lon} * ${cos_lon} + ${Posts.sin_lon} * ${sin_lon}) > ${arcDistance}`
@@ -64,6 +70,7 @@ postRouter.get("/q", async (c) => {
 		return c.text(`database error: ${error}`, 400)
 	}
 })
+postRouter.use("/*", handleAuth())
 postRouter.get("/:postId", async (c) => {
 	const postId = Number(c.req.param("postId"))
 
